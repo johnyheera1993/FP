@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Coming Soon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet'>
+ 
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+
+<link href = "homecss.css" rel = "stylesheet" type = "text/css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+.mySlides {display:none;}
+</style>
+
+</head>
+<body>
+
+<!--For getting top icons-->
+<div class="bgimage">
+  <div class="menu">
+    <div class="leftmenu">
+      <h4><a href= "home.html">JSHOPPE-MAKE A STOP</a></h4>  
+    </div>
+
+    <!--For Search box-->
+    <div id="search">
+      <form action="">
+        <input class="search-area" type="text" name="text" placeholder="Search">
+        <input class="search-button" type="submit" name="submit" value="Submit">
+      </form>
+      
+    </div>
+
+    <div class="rightmenu">
+      <ul>
+        <li id="fl"><a href="homeintro.html">Products<i class="fa fa-home" style="font-size:24px;"></i></a></li>
+        <li><a href="services.html">Service<i class="fa fa-hourglass" style="font-size:20px;"></i></a></li>
+        <li><a href="about.html">About<i class="fa fa-info" style="font-size:20px;"></i></a></li>
+        <li><a href=contact.html">Contact<i class="fa fa-address-book-o" style="font-size:20px;"></i></a></li>
+        <li><a href="userlogin.html">Log-In<i class="fa fa-key" style="font-size:20px;"></i> </a></li>
+      </ul>
+      
+    </div>
+  </div>
+
+<h2 class="w3-center">COMING SOON</h2>
+
+<div class="w3-content w3-section">
+  <img class="mySlides" src="1.jpg" style="width:100%">
+  <img class="mySlides" src="2.jpg" style="width:100%">
+  <img class="mySlides" src="3.jpg" style="width:100%">
+  <img class="mySlides" src="4.jpg" style="width:100%">
+  <img class="mySlides" src="5.jpg" style="width:100%">
+  <img class="mySlides" src="6.jpg" style="width:100%">
+  <img class="mySlides" src="7.jpg" style="width:100%">
+  <img class="mySlides" src="8.jpg" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+slide();
+
+function slide() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(slide, 4000); // Change image every 4 seconds
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Products</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet'>
+ 
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+
+<link href = "jquery.bxslider.css" rel = "stylesheet" type = "text/css">
+
+<link href = "homecss.css" rel = "stylesheet" type = "text/css">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="jquery.bxslider.min.js"></script>
+
+<script type="text/javascript" src="js/hi.js"></script>
+<style>
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+.container{
+	width: 95%;
+	margin:0 auto;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+.bg{
+	background-image: url('bw.jpg');
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100vh;
+}
+
+#heading-block{
+
+	width: 100%;
+	height: auto;
+	float: left;
+	color: black;
+	font-size: 20px;
+}
+
+#heading-block h2{
+
+	line-height: 35px;
+	border-left: 20px solid black;
+	padding-left: 10px;
+}
+
+.catbox{
+
+	width: 600px;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	float: left;
+	margin-right: 35px;
+	margin-bottom: 35px;
+}
+
+.catbox span{
+
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	background: rgba(0,0,0,0.6);
+	color: white;
+	display: block;
+	bottom: 30px;
+	position: absolute;
+	z-index: 999;
+	text-align: center;
+}
+
+.catbox img{
+
+	max-width: 100%;
+}
+
+.catbox:hover img{
+	transform: scale(1.3,1.3);
+	transition: all .5s ease;
+}
+
+.prod-box{
+
+	width: 235px;
+	height: 300px;
+	overflow: hidden;
+	margin: 0 20 30 0;
+	position: relative;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	}
+
+.prod-box>img{
+	max-width: 100%;
+}
+
+.prod-trans{
+
+	background: rgba(0,0,0,0.6);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	opacity: 0;
+	transition: all .5s ease;
+}
+
+.prod-box:hover .prod-trans{
+
+	opacity: 1;
+	transition: all .5s ease;
+}
+
+.prod-feature{
+
+	text-align: center;
+	margin-top: -150px;
+	transition: all .5s ease;
+}
+
+.prod-feature p{
+
+	font-family: verdana;
+}
+
+.prod-box:hover .prod-feature{
+
+	margin-top: 150px;
+	transition: all .5s ease;
+}
+
+#footer{
+	width: 100%;
+	height: 300px;
+	background: #f5f5f5;
+	float: left;
+}
+
+
+.footer_sub{
+
+	width: 25%;
+	float: left;
+}
+
+
+.footer_sub_2{
+
+	float: left;
+}
+
+.footer_sub_2 ul li{
+
+	list-style: none;
+}
+
+.footer_sub_2 ul li a{
+
+	text-decoration:none;
+	color:#000;
+}
+
+.footer_sub_2 ul li a:hover{
+
+	color: #1aaa1a;
+	text-decoration: underline;
+}
+
+footer_sub_3 ul li{
+
+	list-style: none;
+}
+
+.footer_sub_3 ul li a{
+
+	text-decoration:none;
+	color:#000;
+}
+
+.footer_sub_3 ul li a:hover{
+
+	color: #1aaa1a;
+	text-decoration: underline;
+}
+
+
+</style>
+
+</head>
+<body>
+	<div class="bg">
+	<div class="menu">
+		<div class="leftmenu">
+			<h4><a href = "home.html">JSHOPPE-MAKE A STOP</a></h4>	
+		</div>
+
+		<!--For Search box-->
+		<div id="search">
+			<form action="">
+				<input class="search-area" type="text" name="text" placeholder="Search">
+				<input class="search-button" type="submit" name="submit" value="Submit">
+			</form>
+			
+		</div>
+
+		<div class="rightmenu">
+			<ul>
+				<li><a href="homeintro.html">Products<i class="fa fa-home" style="font-size:24px;"></i></a></li>
+				<li><a href="services.html">Service<i class="fa fa-hourglass" style="font-size:20px;"></i></a></li>
+				<li><a href="about.html">About<i class="fa fa-info" style="font-size:20px;"></i></a></li>
+				<li><a href="contact.html">Contact<i class="fa fa-address-book-o" style="font-size:20px;"></i></a></li>
+				<li><a href="userlogin.html">Log-In<i class="fa fa-key" style="font-size:20px;"></i> </a></li>
+			</ul>
+			
+		</div>
+
+
+
+<div class="slideshow-container">
+
+<div class="mySlides">
+  <img src="1.jpg" style="width:100%">
+</div>
+
+<div class="mySlides">
+  <img src="2.jpg" style="width:100%">
+</div>
+
+<div class="mySlides">
+  <img src="3.jpg" style="width:100%">
+</div>
+
+<div class="mySlides">
+  <img src="4.jpg" style="width:100%"> 
+</div>
+
+<div class="mySlides">
+  <img src="5.jpg" style="width:100%">
+</div>
+
+<div class="mySlides">
+  <img src="6.jpg" style="width:100%">
+</div>
+
+<div class="mySlides">
+  <img src="7.jpg" style="width:100%">
+</div>
+
+<div class="mySlides">
+  <img src="8.jpg" style="width:100%">
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+</script>
+
+</div>
+
+</div>
+<div class="container">
+	<div id="heading-block">
+		<h2>Category</h2>
+	</div>
+</div>
+
+<div class="catbox">
+	<img src="11.png" alt="Gaming Accessories">
+	<span>GAMING ACCESSORIES</span>
+</div>
+
+<div class="catbox">
+	<img src="22.png" alt="Laptops">
+	<span>LAPTOPS</span>
+</div>
+
+<div class="catbox">
+	<img src="33.png" alt="Mobiles">
+	<span>MOBILES</span>
+</div>
+
+
+
+<div id="heading-block">
+	<h2>Products--Gaming</h2>
+
+	<div class="prod-container">
+		<!--First prduct-->
+		<div class="prod-box">
+			<img src="./prgraphics/1.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">GEFORCE GTX</p>
+					<p style="color:#fff;font-weight: bold;">Price: $220</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--second prduct-->
+		<div class="prod-box">
+			<img src="./prgraphics/2.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">MSI TWINFORCE</p>
+					<p style="color:#fff;font-weight: bold;">Price: $320</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--third prduct-->
+		<div class="prod-box">
+			<img src="./prgraphics/3.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">MSI GTX</p>
+					<p style="color:#fff;font-weight: bold;">Price: $300</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--Fourth prduct-->
+		<div class="prod-box">
+			<img src="./prgraphics/4.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">MSI MECH2</p>
+					<p style="color:#fff;font-weight: bold;">Price: $290</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--Fifth prduct-->
+		<div class="prod-box">
+			<img src="./prgraphics/5.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">GTX 1080</p>
+					<p style="color:#fff;font-weight: bold;">Price: $280</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+
+		<!--sixth prduct-->
+		<div class="prod-box">
+			<img src="./prgraphics/6.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">PNV NVIDIA</p>
+					<p style="color:#fff;font-weight: bold;">Price: $240</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--seventh prduct-->
+		<div class="prod-box">
+			<img src="./prgraphics/7.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">ANTHEM</p>
+					<p style="color:#fff;font-weight: bold;">Price: $200</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--eighth prduct-->
+		<div class="prod-box">
+			<img src="./prgraphics/8.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">GOD OF WAR</p>
+					<p style="color:#fff;font-weight: bold;">Price: $150</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--nineth prduct-->
+		<div class="prod-box">
+			<img src="./prgraphics/9.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">FAR CRY 5</p>
+					<p style="color:#fff;font-weight: bold;">Price: $120</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--tenth prduct-->
+		<div class="prod-box">
+			<img src="./prgraphics/10.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">WEREWOLF</p>
+					<p style="color:#fff;font-weight: bold;">Price: $200</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--eleventh prduct-->
+		<div class="prod-box">
+			<img src="./prgraphics/11.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">METRO BOUND</p>
+					<p style="color:#fff;font-weight: bold;">Price: $270</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--twelveth prduct-->
+		<div class="prod-box">
+			<img src="./prgraphics/12.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">TOMB RAIDER</p>
+					<p style="color:#fff;font-weight: bold;">Price: $279</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+
+
+
+	</div>
+
+
+</div>
+
+<br>
+<br>
+<hr>
+<hr>
+
+<div id="heading-block">
+	<h2>Products--Laptops</h2>
+
+	<div class="prod-container">
+		<!--First prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/1.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">HP ENVY</p>
+					<p style="color:#fff;font-weight: bold;">Price: $650</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--second prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/2.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">HP PAVILION</p>
+					<p style="color:#fff;font-weight: bold;">Price: $669</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--third prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/3.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">HP M7</p>
+					<p style="color:#fff;font-weight: bold;">Price: $759</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--Fourth prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/4.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">MSI MECH2</p>
+					<p style="color:#fff;font-weight: bold;">Price: $290</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--Fifth prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/5.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">HP SPECTRE</p>
+					<p style="color:#fff;font-weight: bold;">Price: $1199</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+
+		<!--sixth prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/6.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">DELL</p>
+					<p style="color:#fff;font-weight: bold;">Price: $749</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--seventh prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/7.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">DELL</p>
+					<p style="color:#fff;font-weight: bold;">Price: $770</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--eighth prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/8.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">DELL</p>
+					<p style="color:#fff;font-weight: bold;">Price: $849</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--nineth prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/9.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">MSI GS</p>
+					<p style="color:#fff;font-weight: bold;">Price: $1499</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--tenth prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/10.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">MSI GL</p>
+					<p style="color:#fff;font-weight: bold;">Price: $1799</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--eleventh prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/11.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">MSI STEALTH</p>
+					<p style="color:#fff;font-weight: bold;">Price: $1890</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		<!--twelveth prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/12.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">MSI GP</p>
+					<p style="color:#fff;font-weight: bold;">Price: $1999</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+
+		<!--thirteenth prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/13.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">ALIENWARE</p>
+					<p style="color:#fff;font-weight: bold;">Price: $2790</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+
+		<!--fourteenth prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/14.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">ALIENWARE</p>
+					<p style="color:#fff;font-weight: bold;">Price: $2540</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+
+		<!--fifteenth prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/15.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">ALIENWARE</p>
+					<p style="color:#fff;font-weight: bold;">Price: $2299</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+
+		<!--sixteen prduct-->
+		<div class="prod-box">
+			<img src="./prlaptops/16.jpg" alt="GTX PRO">
+			<div class="prod-trans">
+				<div class="prod-feature">
+					<p style="color:#fff;font-weight: bold;">ALIENWARE</p>
+					<p style="color:#fff;font-weight: bold;">Price: $2560</p>
+					<input type="button" value="Add to Cart" >
+				</div>
+			</div>
+		</div>
+
+		
+
+
+	</div>
+
+<div class="container">
+			<div class="heading-block">
+				
+			</div>
+
+				<div class="offer">
+				<a href="#"><img src="d2.png"></a>
+
+				</div>
+		</div>
+
+<div id="footer">
+
+	<div class="container">
+		
+		<div class="footer_sub">
+			<h2>Policy</h2>
+			<p>2018@...ALL COPYRIGHTS RESERVED</p>
+		</div>
+		<div class="footer_sub_2">
+			<center>
+				<h2>Information</h2>
+				<ul>
+					<li><a href="#">Careers</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Advertisements</a></li>
+					<li><a href="#">Security</a></li>
+					<li><a href="#">Corporate</a></li>
+				</ul>
+			</center>
+		</div>
+		<div class="footer_sub_3">
+			<center>
+				<h2>Social Media</h2>
+				<ul>
+					<li><a href="#">Facebook</a></li>
+					<li><a href="#">Twitter</a></li>
+					<li><a href="#">Google</a></li>
+					<li><a href="#">Google+</a></li>
+					<li><a href="#">LinkedIn</a></li>
+				</ul>
+			</center>
+		</div>
+		<div class="footer_sub_4"></div>
+
+	</div>
+	
+</div>	
+
+	
+
+</div>
+
+<br>
+<br>
+<hr>
+<hr>
+
+
+
+
+
+</body>
+</html>

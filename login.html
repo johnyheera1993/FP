@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User-Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet'>
+ 
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+
+<link href = "homecss.css" rel = "stylesheet" type = "text/css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+        
+        function validation(){
+
+            var us = document.getElementById('user').value;
+            var pass = document.getElementById('password').value;
+            var conpass = document.getElementById('conpass').value;
+            var mob = document.getElementById('mobile').value;
+            var email = document.getElementById('email').value;
+
+
+            //username validation
+            if(us == ""){
+
+                document.getElementById('spanuser').innerHTML = "!Please Enter your username";
+                return false;
+            
+            }
+
+            if((us.length <=2) || (us.length >20)){
+
+                document.getElementById('spanuser').innerHTML = "!Lenght of username must be between 2 and 20";
+                return false;
+            }
+
+            if(!isNaN(us)){
+                document.getElementById('spanuser').innerHTML = "!only characters are allowed";
+                return false;
+            }
+
+
+
+
+
+            //password validation
+            if(pass == ""){
+
+                document.getElementById('spanpass').innerHTML = "!Please Enter your Password";
+                return false;
+            
+            }
+
+
+             if((pass.length <=2) || (pass.length >20)){
+
+                document.getElementById('spanpass').innerHTML = "!Lenght of password must be between 2 and 20";
+                return false;
+            }
+
+
+            if(pass != conpass){
+
+                document.getElementById('spanpass').innerHTML = "Passwords doesn't match";
+                return false;
+
+            }
+
+
+
+
+
+
+
+            if(conpass == ""){
+
+                document.getElementById('spanconpass').innerHTML = "!Please Enter your Password Again";
+                return false;
+            
+            }
+
+
+
+
+
+            //mobile validation
+            if(mob == ""){
+
+                document.getElementById('spanmobile').innerHTML = "!Please Enter your Mobile Number ";
+                return false;
+            
+            }
+
+            if(isNaN(mob)){
+
+                document.getElementById('spanmobile').innerHTML = "!Only Numbers are allowed ";
+                return false;
+            }
+
+            if(mob.length!=10){
+
+                document.getElementById('spanmobile').innerHTML = "!Mobile Number should be of 10 digits ";
+                return false;
+            }
+
+
+
+
+
+            //email validation
+            if(email == ""){
+
+                document.getElementById('spanemail').innerHTML = "please Enter your Valid E-mail Id";
+                return false;
+            
+            }
+
+            if(email.indexOf('@') <= 0){
+
+               document.getElementById('spanemail').innerHTML = "Invalid E-mail";
+                return false; 
+            }
+
+            if((email.charAt(email.length-4)!= '.') && (email.charAt(email.length-3)!= '.')){
+
+                document.getElementById('spanemail').innerHTML = "please Enter your Valid E-mail Id";
+                return false;
+            }
+}
+
+
+         
+
+    </script>
+
+    </head>
+    
+<title>login</title>
+
+
+<body ng-app="">
+
+    <div class="bgimage">
+    <div class="menu">
+        <div class="leftmenu">
+            <h4><a href= "home.html">JSHOPPE-MAKE A STOP</a></h4>   
+        </div>
+
+        <!--For Search box-->
+        <div id="search">
+            <form action="">
+                <input class="search-area" type="text" name="text" placeholder="Search">
+                <input class="search-button" type="submit" name="submit" value="Submit">
+            </form>
+            
+        </div>
+
+        <div class="rightmenu">
+            <ul>
+                <li><a href="homeintro.html">Products<i class="fa fa-home" style="font-size:24px;"></i></a></li>
+                <li><a href="services.html">Service<i class="fa fa-hourglass" style="font-size:20px;"></i></a></li>
+                <li><a href="about.html">About<i class="fa fa-info" style="font-size:20px;"></i></a></li>
+                <li><a href=contact.html">Contact<i class="fa fa-address-book-o" style="font-size:20px;"></i></a></li>
+                <li><a href="userlogin.html">Log-In<i class="fa fa-key" style="font-size:20px;"></i></a></li>
+            </ul>
+            
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1 class="text-success text-center">User Registration</h1>
+        <br>
+
+        <div class="col-lg-8 m-auto d-block">
+        <form  name = "myForm" action="#" onsubmit="return validation()" class="bg-light"> 
+
+            <div class="form-group1">
+                <label>Username</label>
+                <input type="text" class="form-control" name="user" id="user" autocomplete="off" ng-model="user" required>
+                <span ng-show="myForm.user.$touched && myForm.user.$invalid">The username is required.</span>
+                <span id = "spanuser" class="text-danger font-weight-bold"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="Password" class="form-control" name="password" id="password" autocomplete="off" ng-model="password" required>
+                <span ng-show="myForm.password.$touched && myForm.password.$invalid">The password is required.</span>
+                <span id = "spanpass" class="text-danger font-weight-bold"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="Password" class="form-control" name="conpass" id="conpass" autocomplete="off" ng-model="conpass" required>
+                <span ng-show="myForm.conpass.$touched && myForm.conpass.$invalid">The password is required.</span>
+                <span id = "spanconpass" class="text-danger font-weight-bold"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Mobile Number</label>
+                <input type="Password" class="form-control" name="mobile" id="mobile" autocomplete="off" ng-model="mobile" required>
+                <span ng-show="myForm.mobile.$touched && myForm.mobile.$invalid">The mobile number is required.</span>
+                <span id = "spanmobile" class="text-danger font-weight-bold"></span>
+            </div>
+
+            <div class="form-group">
+                <label>E-mail</label>
+                <input type="text" class="form-control" name="email" id="email" autocomplete="off" ng-model="email" required>
+                <span ng-show="myForm.email.$touched && myForm.email.$invalid">The email is required.</span>
+                <span id = "spanemail" class="text-danger font-weight-bold"></span>
+            </div>
+
+            <input type="submit" name="submit" value="submit" class="btn btn-success">
+
+
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
